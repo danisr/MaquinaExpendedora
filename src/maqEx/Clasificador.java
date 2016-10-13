@@ -9,7 +9,7 @@ public class Clasificador {
 	HashMap<Integer, Dispensador> dispensadores = new HashMap<Integer, Dispensador>();
 
 	public void insertarMoneda(int moneda) {
-		depositos.get(moneda).añadir();
+		depositos.get(moneda).aÃ±adir();
 		saldo += moneda;
 		visor.mostrarSaldo(saldo);
 	}
@@ -20,7 +20,7 @@ public class Clasificador {
 		visor.mostrarSaldo(saldo);
 	}
 
-	public void seleccionarProducto() {
-		
+	public void seleccionarProducto(String producto) {
+
 	}
 }

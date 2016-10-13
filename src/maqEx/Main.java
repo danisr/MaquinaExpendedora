@@ -3,8 +3,12 @@ package maqEx;
 public class Main {
 	public static void main(String[] args) {
 		Principal principal = new Principal();
-		principal.ejecucion();
-
 		
+		FileAdmin bebidasCantidad = new FileAdmin("bebidasCantidad.txt");
+		FileAdmin bebidasPrecio = new FileAdmin("bebidasPrecio.txt");
+		FileAdmin monedas = new FileAdmin("monedas.txt");
+			
+	
+		principal.ejecucion();	
 	}
 }

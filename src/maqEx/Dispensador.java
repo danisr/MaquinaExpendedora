@@ -1,13 +1,11 @@
 package maqEx;
 
 public class Dispensador {
-	private String tipo;
 	private int precio;
 	private int cantidad;
 
-	public Dispensador(String tipo, int precio, int cantidad) {
+	public Dispensador(int precio, int cantidad) {
 		super();
-		this.tipo = tipo;
 		this.precio = precio;
 		this.cantidad = cantidad;
 	}
