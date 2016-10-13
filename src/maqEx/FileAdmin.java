@@ -8,17 +8,17 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class FileAdmin {
-	HashMap<String, String> hmap = new HashMap<String, String>();		
+	HashMap<String, String> hmap = new HashMap<String, String>();
 	BufferedReader breader = null;
 	BufferedWriter bwriter = null;
 	FileReader fReader = null;
 	String precio = "";
 	int cantidad = 0;
-	
+
 	public FileAdmin(String nombreFichero) {
 		leerFichero(nombreFichero);
-	}	
-	
+	}
+
 	public void leerFichero(String fichero) {
 		try {
 			fReader = new FileReader(fichero);
@@ -35,15 +35,12 @@ public class FileAdmin {
 			e.printStackTrace();
 		}
 	}
-	
-	public int getCantidadBebidas(String producto) {
-		
-		return cantidad;
+
+	public String getCantidadBebidas(String producto) {
+		return hmap.get(producto);
 	}
-	
+
 	public String getPrecioBebidas(String producto) {
-		
-		
-		return precio;
+		return hmap.get(producto);
 	}
 }
