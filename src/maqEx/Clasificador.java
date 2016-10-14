@@ -7,9 +7,9 @@ public class Clasificador {
 	Visor visor;
 	HashMap<Integer, Deposito> depositos = new HashMap<Integer, Deposito>();
 	HashMap<Integer, Dispensador> dispensadores = new HashMap<Integer, Dispensador>();
-
+	
 	public void insertarMoneda(int moneda) {
-		depositos.get(moneda).aÃ±adir();
+		depositos.get(moneda).añadir();
 		saldo += moneda;
 		visor.mostrarSaldo(saldo);
 	}

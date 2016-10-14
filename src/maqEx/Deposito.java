@@ -26,7 +26,7 @@ public class Deposito {
 		this.cantidad = cantidad;
 	}
 
-	public void aÃ±adir() {
+	public void añadir() {
 		cantidad++;
 	}
 

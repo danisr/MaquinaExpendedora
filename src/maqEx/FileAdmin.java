@@ -12,8 +12,6 @@ public class FileAdmin {
 	BufferedReader breader = null;
 	BufferedWriter bwriter = null;
 	FileReader fReader = null;
-	String precio = "";
-	int cantidad = 0;
 
 	public FileAdmin(String nombreFichero) {
 		leerFichero(nombreFichero);
@@ -34,6 +32,10 @@ public class FileAdmin {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void crearDepositos() {
+		// leer de fichero antes
 	}
 
 	public String getCantidadBebidas(String producto) {
