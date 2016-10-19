@@ -1,5 +1,6 @@
 package maqEx;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Principal {
@@ -15,6 +16,10 @@ public class Principal {
 	public Principal(FileAdmin bebidasCantidad, FileAdmin bebidasPrecio, FileAdmin monedas) {
 		teclado = new Scanner(System.in);
 		clasificador = new Clasificador();
+		
+		HashMap<Integer, Deposito> auxdepositos = monedas.leerFicheroMon("monedas.txt");		
+		//clasificador.setDepositos(auxdepositos);
+		
 		visor = new Visor();
 		this.bebidasCantidad = bebidasCantidad;
 		this.bebidasPrecio = bebidasPrecio;
@@ -27,40 +32,38 @@ public class Principal {
 		visor.mostrarBienvenida();
 
 		while (!salir) { // HASTA Q NO SE SELECCIONE OPCION (4 SALIR)
-			System.out.println("¿Qué desea? \n" + "1- Insertar Moneda \n" + "2- Seleccionar Producto \n"
-					+ "3- Devolver Moneda \n" + "4- Salir");
+			System.out.println("¿Qué desea?\n1- Insertar Moneda\n2- Seleccionar Producto\n3- Devolver Moneda \n4- Salir");
 			try {
 				opcion = teclado.nextInt();
 
 				switch (opcion) {
-				// Insertar Moneda
-				case 1:
+				// INSERTAR MONEDA
+				case 1:					
 					System.out.println(
-							"¿Qué moneda quiere introducir?\n1- 0.10€\n2- 0.20€\n3- 0.50€\n4- 1.00€\n5- 2.00€");
+							"¿Qué moneda quiere introducir?\n1- 2.00€\n2- 1.00€\n3- 0.50€\n4- 0.20€\n5- 0.10€");
 					int moneda = teclado.nextInt();
 					teclado.nextLine();
 					switch (moneda) {
 					case 1:
-						moneda = 10;
+						moneda = 200;
 						clasificador.insertarMoneda(moneda);
 						break;
-//					case 2:
-//						moneda = 20;
-//						clasificador.insertarMoneda(moneda);
-//						break;
-//					case 3:
-//						moneda = 50;
-//						clasificador.insertarMoneda(moneda);
-//						break;
-//					case 4:
-//						moneda = 100;
-//						clasificador.insertarMoneda(moneda);
-//						break;
-//					case 5:
-//						moneda = 200;
-//						clasificador.insertarMoneda(moneda);
-//						break;
-					
+					case 2:
+						moneda = 100;
+						clasificador.insertarMoneda(moneda);
+						break;
+					case 3:
+						moneda = 50;
+						clasificador.insertarMoneda(moneda);
+						break;
+					case 4:
+						moneda = 20;
+						clasificador.insertarMoneda(moneda);
+						break;
+					case 5:
+						moneda = 10;
+						clasificador.insertarMoneda(moneda);
+						break;					
 					default: // NO VALIDO
 						System.out.println("Opcion invalida: Seleccione una moneda introduciendo de 1 a 5");
 						break;
@@ -122,11 +125,11 @@ public class Principal {
 						break;
 					}
 					break;
-				// Devolver Moneda
+				// DEVOLVER MONEDA
 				case 3:
 
 					break;
-				// Salir
+				// SALIR
 				case 4:
 					visor.mostrarDespedida();
 					salir = true;
